@@ -2,8 +2,8 @@
   <div class="app-container">
 
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
-      <el-form-item label="年级：" prop="gradeLevel"  required>
-        <el-select v-model="form.gradeLevel" placeholder="年级" @change="levelChange" >
+      <el-form-item label="部门：" prop="gradeLevel"  required>
+        <el-select v-model="form.gradeLevel" placeholder="部门" @change="levelChange" >
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
@@ -12,7 +12,7 @@
       </el-form-item>
       <el-form-item label="试卷："  required>
         <el-table  :data="form.paperItems" border fit highlight-current-row style="width: 100%">
-          <el-table-column prop="subjectId" label="学科" :formatter="subjectFormatter" width="120px" />
+          <el-table-column prop="subjectId" label="科目" :formatter="subjectFormatter" width="120px" />
           <el-table-column prop="name" label="名称"  />
           <el-table-column prop="createTime" label="创建时间" width="160px"/>
           <el-table-column  label="操作" align="center"  width="160px">
@@ -31,7 +31,7 @@
 
     <el-dialog :visible.sync="paperPage.showDialog" width="70%">
       <el-form :model="paperPage.queryParam" ref="queryForm" :inline="true">
-        <el-form-item label="学科：" >
+        <el-form-item label="科目：" >
           <el-select v-model="paperPage.queryParam.subjectId"  clearable>
             <el-option v-for="item in paperPage.subjectFilter" :key="item.id" :value="item.id" :label="item.name+' ( '+item.levelName+' )'"></el-option>
           </el-select>
@@ -44,7 +44,7 @@
                 @selection-change="handleSelectionChange" border fit highlight-current-row style="width: 100%">
         <el-table-column type="selection" width="35"></el-table-column>
         <el-table-column prop="id" label="Id" width="90px"/>
-        <el-table-column prop="subjectId" label="学科" :formatter="subjectFormatter" width="120px" />
+        <el-table-column prop="subjectId" label="科目" :formatter="subjectFormatter" width="120px" />
         <el-table-column prop="name" label="名称"  />
         <el-table-column prop="createTime" label="创建时间" width="160px"/>
       </el-table>
@@ -92,7 +92,7 @@ export default {
         total: 0
       },
       rules: {
-        gradeLevel: [{ required: true, message: '请输入年级', trigger: 'change' }],
+        gradeLevel: [{ required: true, message: '请输入部门', trigger: 'change' }],
         title: [{ required: true, message: '请输入任务标题', trigger: 'blur' }]
       }
     }

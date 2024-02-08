@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
-      <el-form-item label="年级：" prop="level" required>
-        <el-select v-model="form.level" placeholder="年级"  @change="levelChange">
+      <el-form-item label="部门：" prop="level" required>
+        <el-select v-model="form.level" placeholder="部门"  @change="levelChange">
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="学科：" prop="subjectId" required>
-        <el-select v-model="form.subjectId" placeholder="学科">
+      <el-form-item label="科目：" prop="subjectId" required>
+        <el-select v-model="form.subjectId" placeholder="科目">
           <el-option v-for="item in subjectFilter" :key="item.id" :value="item.id"
                      :label="item.name+' ( '+item.levelName+' )'"></el-option>
         </el-select>
@@ -113,10 +113,10 @@ export default {
       formLoading: false,
       rules: {
         level: [
-          { required: true, message: '请选择年级', trigger: 'change' }
+          { required: true, message: '请选择部门', trigger: 'change' }
         ],
         subjectId: [
-          { required: true, message: '请选择学科', trigger: 'change' }
+          { required: true, message: '请选择科目', trigger: 'change' }
         ],
         paperType: [
           { required: true, message: '请选择试卷类型', trigger: 'change' }

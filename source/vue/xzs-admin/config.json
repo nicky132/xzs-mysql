@@ -1,0 +1,15 @@
+{
+    "departmentList":[
+        { "key": 1, "value": "一部" }, 
+        { "key": 2, "value": "二部" }, 
+        { "key": 3, "value": "三部" }, 
+        { "key": 4, "value": "四部" }, 
+        { "key": 5, "value": "五部" }, 
+        { "key": 6, "value": "六部" },
+        { "key": 7, "value": "七部" }, 
+        { "key": 8, "value": "八部" }, 
+        { "key": 9, "value": "九部" },
+        { "key": 10, "value": "十部" }, 
+        { "key": 11, "value": "十一部" }
+    ]
+}

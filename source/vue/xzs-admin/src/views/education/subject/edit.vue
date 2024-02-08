@@ -2,11 +2,11 @@
   <div class="app-container">
 
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading">
-      <el-form-item label="学科：" required>
+      <el-form-item label="科目：" required>
         <el-input v-model="form.name"></el-input>
       </el-form-item>
-      <el-form-item label="年级：" required>
-        <el-select v-model="form.level" placeholder="年级">
+      <el-form-item label="部门：" required>
+        <el-select v-model="form.level" placeholder="部门">
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
